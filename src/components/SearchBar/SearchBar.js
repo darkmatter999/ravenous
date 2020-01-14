@@ -16,11 +16,12 @@ class SearchBar extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.keyPress = this.keyPress.bind(this);
     
-
+    //added 'distance' as fourth sort option
     this.sortByOptions = {
       'Best Match': 'best_match',
       'Highest Rated': 'rating',
-      'Most Reviewed': 'review_count'
+      'Most Reviewed': 'review_count',
+      'Nearest': 'distance'
     };
   }
 
