@@ -8,9 +8,10 @@ s1PjZV6vJhXWAjvr3eDKC9xnP2_LCvg--vDarBOmDMbLYytuFUdjHK4QRIUXU6MUYI-18mzYaPSbqR8R
 
 const apiKey = "s1PjZV6vJhXWAjvr3eDKC9xnP2_LCvg--vDarBOmDMbLYytuFUdjHK4QRIUXU6MUYI-18mzYaPSbqR8RpI6RY5t2fZw4ktwag8Qa_QojufLngpSxOAYll004HWMbXnYx";
 
+//added a 'limit' (of 10 results) to the number of displayed results. Default with Yelp is 20.
 const Yelp = {
     search(term, location, sortBy) {
-        return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`,
+        return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}&limit=10`,
         { headers: {Authorization: `Bearer ${apiKey}`}
     })
     .then((response) => {
