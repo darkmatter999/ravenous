@@ -1,5 +1,7 @@
 import React from 'react';
 import './SearchBar.css';
+import App from '../App/app.js';
+
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -15,6 +17,7 @@ class SearchBar extends React.Component {
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.keyPress = this.keyPress.bind(this);
+    this.resetStates = this.resetStates.bind(this)
     
     //added 'distance' as fourth sort option
     this.sortByOptions = {
@@ -50,6 +53,18 @@ class SearchBar extends React.Component {
     event.preventDefault();
   }
 
+  resetStates() {
+    // reset all modified states back to their respective default modes
+    this.setState(
+      {
+      term: '',
+      location: '',
+      sortBy: 'best_match'
+      })
+    // clear the input fields from all text typed as part of the previous search
+    document.getElementById('search-fields').reset()
+  }
+
   //implements a method that listens for a press on the 'Enter' key and executes the 'handleSearch' method once pressed
   keyPress(e) {
     if (e.keyCode == 13) {
@@ -78,8 +93,10 @@ class SearchBar extends React.Component {
           </ul>
         </div>
         <div className="SearchBar-fields">
+          <form id="search-fields">
           <input placeholder="Search Businesses" onChange={this.handleTermChange} />
           <input placeholder="Where?" onChange={this.handleLocationChange} onKeyDown={this.keyPress} />
+          </form>
         </div>
         <div className="SearchBar-submit">
           <a onClick={this.handleSearch}>Let's Go</a>
