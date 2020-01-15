@@ -9,7 +9,10 @@ class Business extends React.Component {
         return (
             <div className="Business">
                 <div className="image-container">
-                    <img src={this.props.business.imageSrc} alt=''/>
+                    {/* When there is no image of the displayed business, a default image (the one used by Yelp itself) is displayed.
+                    The JS ternary operator is used to implement this conditional. */}
+                    {this.props.business.imageSrc != "" ? (<img src={this.props.business.imageSrc} alt=''/> )
+                    : (<img src = {'/images/business_large_square.png'} />) }
                 </div>
                 <h2>{this.props.business.name}</h2>
                 <div className="Business-information">

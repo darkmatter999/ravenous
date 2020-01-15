@@ -20,8 +20,8 @@ const Yelp = {
     .then((jsonResponse) => {
         if (jsonResponse.businesses) {
             return jsonResponse.businesses.map(((business) => {
-                console.log(jsonResponse);
-                console.log(business);
+                //console.log(jsonResponse);
+                //console.log(business);
                 return {
                     id: business.id,
                     imageSrc: business.image_url,
