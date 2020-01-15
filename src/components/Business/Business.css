@@ -50,3 +50,11 @@
     font-size: .88rem;
     line-height: 1rem;
   }
+
+  .google-button {
+    background-color:  rgb(113, 212, 118);
+    font-family: 'Verdana';
+    display: flex;
+    text-align: center;
+    margin-left: 70px;
+  }

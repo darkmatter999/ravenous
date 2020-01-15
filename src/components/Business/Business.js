@@ -24,6 +24,12 @@ class Business extends React.Component {
                         <p>{this.props.business.reviewCount} reviews</p>
                     </div>
                 </div>
+                <div>
+                    {/* Adding a button with link to the Google Maps page of the clicked business */}
+                    <a href={'https://www.google.com/maps/place/' + this.props.business.address + '+' + this.props.business.city + '/'} target="_blank">
+                        <button className="google-button">Open in Google Maps</button>
+                    </a>
+                </div>
             </div>
         )
     }
