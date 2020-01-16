@@ -17,7 +17,8 @@ class SearchBar extends React.Component {
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.keyPress = this.keyPress.bind(this);
-    this.resetStates = this.resetStates.bind(this)
+    this.resetStates = this.resetStates.bind(this);
+    this.displayLoc = this.displayLoc.bind(this);
     
     //added 'distance' as fourth sort option
     this.sortByOptions = {
@@ -63,6 +64,10 @@ class SearchBar extends React.Component {
       })
     // clear the input fields from all text typed as part of the previous search
     document.getElementById('search-fields').reset()
+  }
+
+  displayLoc() {
+    return this.state.location;
   }
 
   //implements a method that listens for a press on the 'Enter' key and executes the 'handleSearch' method once pressed

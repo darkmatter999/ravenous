@@ -72,17 +72,17 @@ class App extends React.Component {
     */
     this.SB = React.createRef();
     this.searchYelp = this.searchYelp.bind(this);
-    this.handleDefault = this.handleDefault.bind(this)
+    this.handleDefault = this.handleDefault.bind(this);
+    this.displayLocation = this.displayLocation.bind(this);
   }
 
   searchYelp(term, location, sortBy) {
-    //console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
     Yelp.search(term, location, sortBy).then((businesses) => {
       this.setState({businesses: businesses})
     })
 }
 
-handleDefault() {
+  handleDefault() {
   // clear the displayed results from the previous search
   this.setState({
     businesses: [],
@@ -91,6 +91,11 @@ handleDefault() {
   this.SB.current.resetStates();
   
 }
+  //gathering the current state.location from SearchBar
+  displayLocation() {
+    const loc = this.SB.current.displayLoc();
+    return loc;
+}
 
   render() {  
     return (
@@ -98,7 +103,7 @@ handleDefault() {
         {/*In the following line, the prop 'onClick' is defined and given the value of above method 'handleDefault' */}
         <SearchBarHeader onClick={this.handleDefault} />
         <SearchBar ref={this.SB} searchYelp={this.searchYelp} />
-        <BusinessList businesses={this.state.businesses} />
+        <BusinessList businesses={this.state.businesses} loc={this.displayLocation} />
         
       </div>
     )
