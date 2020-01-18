@@ -99,8 +99,16 @@ class SearchBar extends React.Component {
         </div>
         <div className="SearchBar-fields">
           <form id="search-fields">
-          <input placeholder="Search Businesses" onChange={this.handleTermChange} />
-          <input placeholder="Where?" onChange={this.handleLocationChange} onKeyDown={this.keyPress} />
+            {/* add an HTML5-native datalist for the category input so that list choice and (optional) text input are combined */}
+            <input list="business-choices" placeholder="Search Businesses" onChange={this.handleTermChange} onKeyDown={this.keyPress} />
+            <datalist id="business-choices">
+                <option value="Pizza" />
+                <option value="Burger" />
+                <option value="Chinese" />
+                <option value="Mexican" />
+                <option value="Vegetarian" />
+            </datalist>
+            <input placeholder="Where?" onChange={this.handleLocationChange} onKeyDown={this.keyPress} />
           </form>
         </div>
         <div className="SearchBar-submit">

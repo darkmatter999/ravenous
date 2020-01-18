@@ -12,7 +12,7 @@ class Business extends React.Component {
                     {/* When there is no image of the displayed business, a default image (the one used by Yelp itself) is displayed.
                     The JS ternary operator is used to implement this conditional. */}
                     {this.props.business.imageSrc != "" ? (<img src={this.props.business.imageSrc} alt=''/> )
-                    : (<img src = {'/images/business_large_square.png'} />) }
+                    : (<img src = {'/images/business_large_square.png'} alt='' />) }
                 </div>
                 <h2>{this.props.business.name}</h2>
                 <div className="Business-information">
@@ -29,7 +29,7 @@ class Business extends React.Component {
                 </div>
                 <div>
                     {/* Adding a button with link to the Google Maps page of the clicked business */}
-                    <a href={'https://www.google.com/maps/place/' + this.props.business.address + '+' + this.props.business.city + '/'} target="_blank">
+                    <a href={'https://www.google.com/maps/place/' + this.props.business.address + '+' + this.props.business.city + '/'} rel="noopener noreferrer" target="_blank">
                         <button className="google-button">Open in Google Maps</button>
                     </a>
                 </div>
