@@ -1,8 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './app.css';
 import BusinessList from '../BusinessList/BusinessList';
-import Business from '../Business/Business';
 import SearchBar from '../SearchBar/SearchBar';
 import Yelp from '../../util/Yelp.js';
 import SearchBarHeader from '../SearchBarHeader/SearchBarHeader';

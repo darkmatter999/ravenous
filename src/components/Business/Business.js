@@ -1,8 +1,5 @@
 import React from 'react';
 import './Business.css';
-import App from '../App/app.js';
-
-
 
 class Business extends React.Component {
     render() {
@@ -11,7 +8,7 @@ class Business extends React.Component {
                 <div className="image-container">
                     {/* When there is no image of the displayed business, a default image (the one used by Yelp itself) is displayed.
                     The JS ternary operator is used to implement this conditional. */}
-                    {this.props.business.imageSrc != "" ? (<img src={this.props.business.imageSrc} alt=''/> )
+                    {this.props.business.imageSrc !== "" ? (<img src={this.props.business.imageSrc} alt=''/> )
                     : (<img src = {'/images/business_large_square.png'} alt='' />) }
                 </div>
                 <h2>{this.props.business.name}</h2>

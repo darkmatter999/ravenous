@@ -1,6 +1,5 @@
 import React from 'react';
 import './SearchBar.css';
-import App from '../App/app.js';
 
 
 class SearchBar extends React.Component {
@@ -72,7 +71,7 @@ class SearchBar extends React.Component {
 
   //implements a method that listens for a press on the 'Enter' key and executes the 'handleSearch' method once pressed
   keyPress(e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
       //console.log(e.target.value);
       this.handleSearch(e)
     }
@@ -112,7 +111,7 @@ class SearchBar extends React.Component {
           </form>
         </div>
         <div className="SearchBar-submit">
-          <a onClick={this.handleSearch}>Let's Go</a>
+          <button onClick={this.handleSearch}>Let's Go</button>
         </div>
       </div>
     );

@@ -1,13 +1,9 @@
 import React from 'react';
 import './BusinessList.css';
 import Business from '../Business/Business';
-import SearchBar from '../SearchBar/SearchBar';
-import App from '../App/app.js';
 
 class BusinessList extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+    
     render() {
         if (this.props.businesses) {
         return (
